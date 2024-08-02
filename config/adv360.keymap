@@ -74,6 +74,20 @@
             bindings = <&kp LC(LG(LEFT))>;
             label = "SWITCH_DESKTOP_LEFT";
         };
+
+        Print: Print {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C_AC_PRINT &kp LEFT_SHIFT>;
+            label = "PRINT";
+        };
+
+        Print2: Print2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp PRINTSCREEN &kp LSHIFT>;
+            label = "PRINT2";
+        };
     };
 
     keymap {
@@ -81,11 +95,11 @@
 
         default_layer {
             bindings = <
-&kp EQUAL  &kp N1     &kp N2    &kp N3    &kp N4     &kp N5  &tog 1                                                                               &mo 3                  &kp N6  &kp N7    &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp TAB    &kp Q      &kp W     &kp E     &kp R      &kp T   &switch_desktop_left                                                                 &switch_desktop_right  &kp Y   &kp U     &kp I      &kp O     &kp P     &kp BSLH
-&kp ESC    &kp A      &kp S     &kp D     &kp F      &kp G   &mouse_left_click     &kp LCTRL  &kp LALT              &kp RA(RIGHT_ALT)  &kp RCTRL  &mouse_right_click     &kp H   &kp J     &kp K      &kp L     &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z      &kp X     &kp C     &kp V      &kp B                                    &kp LEFT_COMMAND      &kp RIGHT_COMMAND                                    &kp N   &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-&mo 2      &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC              &kp DEL    &alt_f4               &alt_tab           &kp ENTER  &kp SPACE                      &kp DOWN  &kp UP     &kp LBKT  &kp RBKT  &mo 2
+&kp EQUAL  &kp N1     &kp N2    &kp N3    &kp N4     &kp N5  &tog 1                                                                            &mo 3               &kp N6  &kp N7    &kp N8     &kp N9    &kp N0    &kp MINUS
+&kp TAB    &kp Q      &kp W     &kp E     &kp R      &kp T   &Print                                                                            &Print2             &kp Y   &kp U     &kp I      &kp O     &kp P     &kp BSLH
+&kp ESC    &kp A      &kp S     &kp D     &kp F      &kp G   &mouse_left_click  &kp LCTRL  &kp LALT              &kp RA(RIGHT_ALT)  &kp RCTRL  &mouse_right_click  &kp H   &kp J     &kp K      &kp L     &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z      &kp X     &kp C     &kp V      &kp B                                 &kp LEFT_COMMAND      &kp RIGHT_COMMAND                                 &kp N   &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
+&mo 2      &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC           &kp DEL    &alt_f4               &alt_tab           &kp ENTER  &kp SPACE                   &kp DOWN  &kp UP     &kp LBKT  &kp RBKT  &mo 2
             >;
         };
 
